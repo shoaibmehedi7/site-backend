@@ -6,13 +6,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserRepository } from '../user/repositories/user.repository';
 import { UserCredentialRepository } from '../user/repositories/user.credential.repository';
 import { SiteRepository } from './repositories/site.repository';
-import { AuditRecordRepository } from '../audit/repositories/audit-record.repository';
-import { AuditItemRepository } from '../audit/repositories/audit-item.repository';
+import { HistoryRepository } from '../history/repositories/history.repository';
 
 @Module({
   imports: [
     JwtTokenModule,
-    TypeOrmModule.forFeature([SiteRepository , AuditRecordRepository , AuditItemRepository ])
+    TypeOrmModule.forFeature([SiteRepository , HistoryRepository  ])
   ],
   controllers: [SiteController],
   providers: [SiteService]

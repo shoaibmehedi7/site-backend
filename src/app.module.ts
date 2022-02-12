@@ -10,6 +10,8 @@ import { LoggerMiddleware } from './middlewares/logger.middleware';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthorizationMiddleware } from './middlewares/authorization.middleware';
 import { JwtTokenModule } from './domains/misc/jwt-token/jwt-token.module';
+import { SiteModule } from './domains/site/site.module';
+import { HistoryModule } from './domains/history/history.module';
 
 @Module({
   imports: [
@@ -34,6 +36,8 @@ import { JwtTokenModule } from './domains/misc/jwt-token/jwt-token.module';
     }),
     UserModule,
     JwtTokenModule,
+    SiteModule,
+    HistoryModule,
   ],
   controllers: [],
   providers: [],

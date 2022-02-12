@@ -1,6 +1,6 @@
+import { History } from 'src/domains/history/entities/History';
 import { Entity, Column, ManyToMany, JoinTable, OneToMany } from 'typeorm';
 import {BaseEntity} from "../../../models/BaseEntity";
-import { AuditRecord } from '../../audit/entities/AuditRecord';
 
 
 @Entity({ name : "SITE"})
@@ -22,12 +22,12 @@ export class Site extends BaseEntity{
   lng: number;
 
   @OneToMany(
-    type => AuditRecord,
+    type => History,
     record => record.site,
     {
       eager: false
     }
   )
-  changes: AuditRecord[];
+  changes: History[];
 
 }
