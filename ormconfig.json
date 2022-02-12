@@ -1,0 +1,11 @@
+{
+  "type": "postgres",
+  "host": "dev-mehedi.clmk8pebidwd.us-east-2.rds.amazonaws.com",
+  "port": 5432,
+  "username": "dev_mehedi",
+  "password": "11111111",
+  "database": "sites",
+  "entities": ["dist/**/entities/*{.ts,.js}"],
+  "synchronize": true ,
+  "autoLoadEntities": true
+}

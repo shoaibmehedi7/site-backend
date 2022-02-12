@@ -11,11 +11,11 @@ class TypeOrmConfigService implements TypeOrmOptionsFactory {
     createTypeOrmOptions(): TypeOrmModuleOptions {
         return {
             type: 'postgres',
-            host: 'localhost',
+            host: 'dev-mehedi.clmk8pebidwd.us-east-2.rds.amazonaws.com',
             port: 5432,
-            username: 'rokkhihome',
-            password: 'rokkhihome',
-            database: 'rokkhihome',
+            username: 'dev_mehedi',
+            password: '11111111',
+            database: 'sites',
             entities: [__dirname + '/**/*.entity{.ts,.js}'],
             synchronize: true,
         };
