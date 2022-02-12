@@ -1,21 +1,20 @@
+import { IsEmail, IsNotEmpty, MinLength } from 'class-validator';
 import { ApiModelProperty } from '@nestjs/swagger/dist/decorators/api-model-property.decorator';
-import { IsNotEmpty } from 'class-validator';
 
-export class UploadImageMetadata {
-
+export class SignUpRequest {
 
   @ApiModelProperty()
   @IsNotEmpty()
-  folderName: string;
+  name: string;
 
   @ApiModelProperty()
   @IsNotEmpty()
-  subFolderName: string;
-
+  @IsEmail()
+  email: string;
 
   @ApiModelProperty()
+  @MinLength(6)
   @IsNotEmpty()
-  fileName: string;
-
+  password: string;
 
 }
