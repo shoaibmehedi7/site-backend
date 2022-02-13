@@ -30,4 +30,4 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 ## Note
-After successfully run the application API documentation can be found in http://localhost:3000/api/
+After successfully run the application API documentation can be found in http://localhost:3200/api/
