@@ -35,12 +35,12 @@ export class UserService {
 
 
     private async checkIfUserAlreadyExists(request: SignUpRequest) {
-        const oldUser = await this.userRepository.findOne({
+        const user = await this.userRepository.findOne({
             where: {
                 email: request.email,
             },
         });
-        if (oldUser) throw  new CommonException(ErrorCodes.USER_ALREADY_EXISTS);
+        if (user) throw  new CommonException(ErrorCodes.USER_ALREADY_EXISTS);
     }
 
     async signIn(request: SignInRequest):  Promise<Result> {
@@ -67,7 +67,7 @@ export class UserService {
     }
 
     generateToken =  (user: User):string => {
-        return  this.jwtTokenService.generateToken(user.name , user.id);
+        return  this.jwtTokenService.generateToken(`${user.firstName}  ${user.lastName}` , user.id);
     }
 
 
@@ -75,7 +75,11 @@ export class UserService {
 
 
         const userModel = new User();
-        userModel.name = request.name;
+        userModel.firstName = request.firstName;
+        userModel.lastName = request.lastName;
+        userModel.street = request.street;
+        userModel.zip = request.zip;
+        userModel.city = request.city;
         userModel.email = request.email;
         return await this.userRepository.save(userModel);
     }

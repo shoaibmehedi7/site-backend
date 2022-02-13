@@ -14,7 +14,7 @@ export class UsersAuthenticationResponse {
   constructor(userData : User ,  jwtToken:string) {
     if(userData){
       this.userId = userData.id;
-      this.name = userData.name;
+      this.name = userData.firstName + " " + userData.lastName;
       this.email = userData.email;
       this.jwtToken = jwtToken;
     }

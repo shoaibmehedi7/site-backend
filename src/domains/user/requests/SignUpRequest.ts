@@ -5,7 +5,11 @@ export class SignUpRequest {
 
   @ApiModelProperty()
   @IsNotEmpty()
-  name: string;
+  firstName: string;
+
+  @ApiModelProperty()
+  @IsNotEmpty()
+  lastName: string;
 
   @ApiModelProperty()
   @IsNotEmpty()
@@ -17,4 +21,15 @@ export class SignUpRequest {
   @IsNotEmpty()
   password: string;
 
+  @ApiModelProperty()
+  @IsNotEmpty()
+  street: string;
+
+  @ApiModelProperty()
+  @IsNotEmpty()
+  city: string;
+
+  @ApiModelProperty()
+  @IsNotEmpty()
+  zip: string;
 }
