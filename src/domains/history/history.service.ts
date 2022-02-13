@@ -11,7 +11,7 @@ export class HistoryService {
       ) {}
     
       async getHistoryBySiteId(request: GetHistoryById):  Promise<Result> {       
-        const siteResponse = await this.historyRepository.find({where: {site: request.id}});
+        const siteResponse = await this.historyRepository.find({where: {site: request.id},order: {createdDate: "DESC"}});
         return Result.success(siteResponse)
       }
 }
