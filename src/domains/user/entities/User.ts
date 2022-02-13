@@ -4,22 +4,22 @@ import {BaseEntity} from "../../../models/BaseEntity";
 
 @Entity({ name : "USER"})
 export class User extends BaseEntity{
-  @Column({name:"NAME", nullable : false})
+  @Column({name:"Fitst Name", nullable : false})
   firstName: string = "";
 
-  @Column({name:"NAME", nullable : false})
+  @Column({name:"Last Name", nullable : false})
   lastName: string = "";
 
-  @Column({name:"NAME", nullable : false})
+  @Column({name:"Street", nullable : false})
   street: string = "";
 
-  @Column({name:"NAME", nullable : false})
+  @Column({name:"City", nullable : false})
   city: string = "";
 
-  @Column({name:"NAME", nullable : false})
+  @Column({name:"Column", nullable : false})
   zip: string = "";
 
-  @Column({name:"EMAIL", default:""})
+  @Column({name:"Email", nullable : false, unique : true})
   email: string = "";
 
 
