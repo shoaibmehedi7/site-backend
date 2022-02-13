@@ -12,7 +12,7 @@ export class HistoryController {
 
 
     @Post('getHistoryBySiteId')
-    async createSite(@Body() request : GetHistoryById , @Res() response) {
+    async getHistoryBySiteId(@Body() request : GetHistoryById , @Res() response) {
       const result = await this.siteService.getHistoryBySiteId(request);
       response.json(new SuccessResponse(result.getValue()));
     }

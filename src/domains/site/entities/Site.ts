@@ -15,10 +15,10 @@ export class Site extends BaseEntity{
   @Column({name:"REGION", default:""})
   region: string = "";
 
-  @Column({name:"LATITUDE", default:0.0})
+  @Column({type:'float',name:"LATITUDE", default:0.0})
   lat: number;
 
-  @Column({name:"LONGITUDE", default:0.0})
+  @Column({type:'float',name:"LONGITUDE", default:0.0})
   lng: number;
 
   @OneToMany(
