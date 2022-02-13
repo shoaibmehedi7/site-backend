@@ -27,7 +27,7 @@ export class ExceptionsFilter implements ExceptionFilter {
             : exception.message;
 
         if (exception instanceof QueryFailedError) {
-            console.log('this is a database level error', exception);
+            //database level error
         }
 
         if (exception instanceof BadRequestException) {

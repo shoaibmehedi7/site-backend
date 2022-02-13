@@ -10,7 +10,7 @@ export class HistoryService {
         private readonly siteRepository: SiteRepository,
       ) {}
     
-      async getHistoryById(request: GetHistoryById):  Promise<Result> {        
+      async getHistoryBySiteId(request: GetHistoryById):  Promise<Result> {        
         const siteResponse = await  this.siteRepository.findOneOrFail(request.id,{relations:['changes']});
         return Result.success(siteResponse)
       }

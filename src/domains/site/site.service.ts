@@ -30,7 +30,7 @@ export class SiteService {
   }
 
   async getSites(request: GetSitesRequest):  Promise<Result> {
-    const siteResponse = await  this.siteRepository.find({relations:['changes']});
+    const siteResponse = await  this.siteRepository.find();
     return Result.success(siteResponse)
   }
 

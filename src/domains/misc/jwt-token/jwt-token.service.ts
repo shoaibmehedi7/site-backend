@@ -20,8 +20,6 @@ export class JwtTokenService {
   };
 
   verifyToken = (token: string) => {
-    console.log('i am verify token'),token;
-    
     return this.jwt.verify(token, this.configService.get('JWT_SECRET'));
   };
 

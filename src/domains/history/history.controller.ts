@@ -11,9 +11,9 @@ export class HistoryController {
     constructor(private siteService: HistoryService) {}
 
 
-    @Post('getHistoryById')
+    @Post('getHistoryBySiteId')
     async createSite(@Body() request : GetHistoryById , @Res() response) {
-      const result = await this.siteService.getHistoryById(request);
+      const result = await this.siteService.getHistoryBySiteId(request);
       response.json(new SuccessResponse(result.getValue()));
     }
 }

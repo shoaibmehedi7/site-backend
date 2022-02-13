@@ -26,7 +26,6 @@ import { HistoryModule } from './domains/history/history.module';
         database: configService.get('DB_NAME'),
         entities: [__dirname + '/**/entities/*{.ts,.js}'],
         synchronize: true,
-        // autoLoadEntities:true
       }),
       inject: [ConfigService],
     }),

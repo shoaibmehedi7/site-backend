@@ -10,12 +10,7 @@ export class AuthorizationMiddleware implements NestMiddleware {
 
   async use(req: Request, res: Response, next: Function)  {
     const jwtToken: string|undefined = req.header('authtoken');
-    // const jwtToken: string|undefined = req.body.headers.authtoken;
-
     const verifiedToken: JwtPayload = this.jwtTokenService.verifyToken(jwtToken);
-    console.log(verifiedToken,"verifiedToken");
-    
-
     req.body.userId = verifiedToken.userId;
     req.body.userName = verifiedToken.userName;
 
